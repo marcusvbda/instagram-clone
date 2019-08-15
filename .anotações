@@ -1,0 +1,6 @@
+
+- npm install -g json-server   para instalar server virtual
+- json-server --watch server.json  para deixar o servidor fake listening
+
+
+- npm install react-navigation react-native-gesture-handler react-native-reanimated  
