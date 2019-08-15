@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import Feed from './pages/Feed';
+import Feed from './pages/feed';
 import Logo from '../assets/images/instagram.png';
 
 const Routes = createAppContainer(
