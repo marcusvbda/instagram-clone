@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-
-import { View,Text } from 'react-native';
-import env from '../../../env.json';
+import { View  } from 'react-native';
+import Constants from '../contantes';
 import Post from './post';
 
 export default class Feed extends Component {
@@ -9,10 +8,11 @@ export default class Feed extends Component {
         super(props);
         this.state = {posts : []};
         this.getFeed();
+        // console.log(Constants.endpoint.feed)
     }
 
     getFeed = async () => {
-        const response = await fetch(env.get_posts_endpoint);
+        const response = await fetch(Constants.endpoint.feed);
         const data = await response.json();
         this.setState({posts:data});
     };

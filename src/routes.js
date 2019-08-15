@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import Feed from './pages/Feed';
-import logo from './assets/instagram.png';
+import Logo from '../assets/images/instagram.png';
 
 const Routes = createAppContainer(
     createStackNavigator({
@@ -10,7 +10,7 @@ const Routes = createAppContainer(
     },{
         headerLayoutPreset : 'center',
         defaultNavigationOptions : {
-            headerTitle : <Image source={logo} style={{width: 99, height: 28}} />,
+            headerTitle : <Image source={Logo} style={{width: 99, height: 28}} />,
             headerStyle : {
                 backgroundColor : "#f5f5f5"
             }
