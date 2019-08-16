@@ -8,23 +8,24 @@ export default class Feed extends Component {
     constructor(props) {
         super(props);
         this.state = {posts : []};
-        this.getFeed();
+        this.loadPage();
     }
 
-    getFeed = async () => {
-        const response = await fetch(Constants.endpoint.feed);
+    loadPage = async () => {
+        let url = Constants.endpoint.feed;
+        const response = await fetch(url);
         const data = await response.json();
 
         this.setState({posts:data});
     };
 
     render() {
-        const posts = this.state.posts;
+        const feed = this.state.posts;
         return  <View>
                     <ScrollView>
-                        {posts.map((row) => {
-                            return <Post key={row.id} post={row} />;
-                        })}
+                        { feed.map( item => {
+                            return <Post key={item.id} post={item} />
+                        }) }
                     </ScrollView>
                 </View>;
     }

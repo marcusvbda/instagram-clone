@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Photo from "./photo";
+import Description from "./description";
 import Header from "./header";
-import { View } from 'react-native';
-import globalStyle from '../../../globalStyle';
+import { View, StyleSheet } from 'react-native';
 
 export default class Post extends Component {
     constructor(props) {
@@ -11,14 +11,18 @@ export default class Post extends Component {
 
     render() {
         const post = this.props.post;
-        return <>
-            <View style={[globalStyle.row,globalStyle.mb1]}>
-                <Header/>
-            </View>
-            <View style={[globalStyle.row,globalStyle.mb2]}>
-                <Photo image={post.image} ratio={post.aspectRatio} />
-            </View>
-        </>;
+        const author = post.author;
+        return  <View style={styles.container}>
+                    <Header author={author}/>
+                    <Photo image={post.image} ratio={post.aspectRatio} />
+                    <Description name={post.author.name} description={post.description} />
+                </View>;
     }
 }
 
+
+const styles = StyleSheet.create({
+    container : {
+        marginVertical : 20
+    }
+})
